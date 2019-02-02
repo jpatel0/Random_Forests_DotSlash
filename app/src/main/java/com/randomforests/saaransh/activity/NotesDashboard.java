@@ -1,4 +1,4 @@
-package com.randomforests.saaransh;
+package com.randomforests.saaransh.activity;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.ActionMode;
 import android.view.MenuItem;
 
+import com.randomforests.saaransh.R;
 import com.randomforests.saaransh.fragments.SummaryFragment;
 
 public class NotesDashboard extends AppCompatActivity {

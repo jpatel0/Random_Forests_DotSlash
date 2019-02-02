@@ -1,4 +1,4 @@
-package com.randomforests.saaransh;
+package com.randomforests.saaransh.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,8 +10,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.randomforests.saaransh.R;
+import com.randomforests.saaransh.activity.NotesDashboard;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
@@ -37,8 +39,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context,NotesDashboard.class);
-
+                Intent intent = new Intent(context, NotesDashboard.class);
                 context.startActivity(intent);
             }
         });

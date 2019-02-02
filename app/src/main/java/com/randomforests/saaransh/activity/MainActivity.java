@@ -1,10 +1,12 @@
-package com.randomforests.saaransh;
+package com.randomforests.saaransh.activity;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.randomforests.saaransh.R;
 
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(MainActivity.this,NotesDashboard.class);
+                Intent intent =new Intent(MainActivity.this, NotesDashboard.class);
                 startActivity(intent);
             }
         });
