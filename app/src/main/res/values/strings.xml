@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Saaransh</string>
+    <string name="notes_summary">Summary</string>
+    <string name="notes_raw">Raw</string>
+    <string name="notes_audio">Audio</string>
+    <string name="notes_suggestion">Suggestions</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

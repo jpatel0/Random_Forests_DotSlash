@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/notes_summary"
+        android:icon="@drawable/ic_note"
+        android:title="@string/notes_summary" />
+
+    <item
+        android:id="@+id/notes_raw"
+        android:icon="@drawable/ic_raw"
+        android:title="@string/notes_raw" />
+
+    <item
+        android:id="@+id/notes_audio"
+        android:icon="@drawable/ic_audio"
+        android:title="@string/notes_audio" />
+
+    <item
+        android:id="@+id/notes_suggestion"
+        android:icon="@drawable/ic_suggest"
+        android:title="@string/notes_suggestion" />
+
+</menu>
