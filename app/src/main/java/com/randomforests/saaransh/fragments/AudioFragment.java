@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 import com.randomforests.saaransh.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class AudioFragment extends Fragment {
 
 
