@@ -28,11 +28,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerViewAdapter adapter= new RecyclerViewAdapter(this,list);
+
         list=new ArrayList<>();
         list.add("Darsh");
         list.add("suraj");
         list.add("jay");
+        RecyclerViewAdapter adapter= new RecyclerViewAdapter(this,list);
         recyclerView.setAdapter(adapter);
 
 
