@@ -1,9 +1,6 @@
 
-# D
-## Darsh Mistry
+# Saaransh
+ 
+## Saransh 
 
-Hey, I am Darshan Mistry..
-
-I am Computer Engineer student ..
-
-I am Intrested in Android and python 
+saaransh is android app for summary of the lecturenotes using google speech to text ir has record of audio and Text with summary formate information 
