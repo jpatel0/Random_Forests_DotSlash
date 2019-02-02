@@ -30,9 +30,6 @@ public class Recoard extends AppCompatActivity {
 
             public void onTick(long millisUntilFinished) {
 
-
-
-
                 //long s=millisUntilFinished;
                 s=s+1000;
 

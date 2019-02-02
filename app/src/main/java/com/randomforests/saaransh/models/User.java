@@ -1,8 +1,7 @@
 package com.randomforests.saaransh.models;
 
 public class User {
-    private String name,groupId;
-    private int id;
+    private String name,clubId;
 
     public User(String name) {
         this.name = name;
@@ -17,10 +16,10 @@ public class User {
     }
 
     public String getGroupId() {
-        return groupId;
+        return clubId;
     }
 
     public void setGroupId(String groupId) {
-        this.groupId = groupId;
+        this.clubId = groupId;
     }
 }

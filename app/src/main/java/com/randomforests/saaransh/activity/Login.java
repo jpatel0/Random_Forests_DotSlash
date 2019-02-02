@@ -51,13 +51,22 @@ public class Login extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==RC_SIGN_IN && resultCode==RESULT_OK){
-            DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            final DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
             userRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists() && dataSnapshot.getChildrenCount()>1){
                         startActivity(new Intent(Login.this,MainActivity.class));
                         finish();
+                    }
+                    else {
+                        userRef.setValue(new User(FirebaseAuth.getInstance().getCurrentUser().getDisplayName())).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                startActivity(new Intent(Login.this,PlaceUserActivity.class));
+                                finish();
+                            }
+                        });
                     }
                 }
 
@@ -66,12 +75,6 @@ public class Login extends AppCompatActivity {
                 }
             });
 
-            userRef.setValue(new User(FirebaseAuth.getInstance().getCurrentUser().getDisplayName())).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-
-                }
-            });
         }
     }
 }

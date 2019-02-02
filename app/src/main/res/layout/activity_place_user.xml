@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.PlaceUserActivity">
+
+    <TextView
+        android:id="@+id/join_club_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Join a Club"/>
+
+    <EditText
+        android:id="@+id/join_club_edit_text"
+        android:layout_width="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/join_club_text_view"
+        android:layout_centerInParent="true"
+        android:hint="club code"
+        />
+
+    <Button
+        android:id="@+id/join_club_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/join_club_text_view"
+        android:layout_alignParentEnd="true"
+        android:text="Join" />
+
+    <TextView
+        android:id="@+id/or_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="15dp"
+        android:text="OR"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/join_club_edit_text" />
+
+    <Button
+        android:id="@+id/create_club_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create A Study Club"
+        android:backgroundTint="@android:color/black"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/or_textview"
+        android:layout_centerInParent="true"/>
+
+
+
+
+</RelativeLayout>
