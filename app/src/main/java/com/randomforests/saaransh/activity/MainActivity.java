@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -30,17 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         floatingActionButton=(FloatingActionButton)findViewById(R.id.floatingActionButton);
-        recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
-        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(context);
-        recyclerView.setLayoutManager(layoutManager);
-
-        list=new ArrayList<>();
-        list.add("Darsh");
-        list.add("suraj");
-        list.add("jay");
-        RecyclerViewAdapter adapter= new RecyclerViewAdapter(this,list);
-        recyclerView.setAdapter(adapter);
-
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
 
@@ -48,6 +38,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =new Intent(MainActivity.this, Recoard.class);
                 startActivity(intent);
+            }
+        });
+
+        CardView myNotes = findViewById(R.id.main_my_notes_card);
+        CardView myClub = findViewById(R.id.main_club_card);
+
+        myNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,AllNotesActivity.class));
+            }
+        });
+
+        myClub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ClubDashboard.class));
             }
         });
     }
@@ -71,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                 return true;
-
         }
         return super.onOptionsItemSelected(item);
     }

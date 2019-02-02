@@ -1,45 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="20dp"
     tools:context=".activity.MainActivity">
 
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:hint="Search"
-        />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <android.support.v7.widget.CardView
+        android:id="@+id/main_my_notes_card"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardElevation="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Notes"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_margin="30dp"/>
+    </android.support.v7.widget.CardView>
 
-    </android.support.v7.widget.RecyclerView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/main_club_card"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/main_my_notes_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardElevation="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Club"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_margin="30dp"/>
+    </android.support.v7.widget.CardView>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="40dp"
         android:clickable="true"
+        android:backgroundTint="@android:color/black"
         android:src="@drawable/ic_fiber_manual_record_black_24dp"
         />
 
-</LinearLayout>
+</RelativeLayout>

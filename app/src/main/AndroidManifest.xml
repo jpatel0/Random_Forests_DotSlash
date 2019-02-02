@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.CreateClub"></activity>
+        <activity android:name=".activity.ClubDashboard"></activity>
+        <activity android:name=".activity.AllNotesActivity" />
+        <activity android:name=".activity.CreateClub" />
         <activity android:name=".activity.PlaceUserActivity" />
         <activity android:name=".activity.Login">
             <intent-filter>
