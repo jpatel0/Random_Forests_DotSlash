@@ -2,11 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/Parent_layout"
-
-    >
+    android:id="@+id/Parent_layout">
     <TextView
-        android:id="@+id/texview"
+        android:id="@+id/textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello"/>
