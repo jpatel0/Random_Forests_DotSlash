@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="40dp"
+        android:layout_margin="30dp"
         android:clickable="true"
         android:backgroundTint="@android:color/black"
         android:src="@drawable/ic_fiber_manual_record_black_24dp"

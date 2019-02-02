@@ -8,18 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.randomforests.saaransh.R;
 import com.randomforests.saaransh.activity.NotesDashboard;
+import com.randomforests.saaransh.models.Notes;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> {
 
-    ArrayList<String> list ;
+    ArrayList<Notes> list ;
     Context context;
-    public RecyclerViewAdapter(Context context, ArrayList<String> list) {
+    public NotesAdapter(Context context, ArrayList<Notes> list) {
         this.list=list;
         this.context=context;
     }
@@ -27,14 +29,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_layout,viewGroup,false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.notes_layout,viewGroup,false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.textView.setText(list.get(i));
+        viewHolder.title.setText(list.get(i).getTitle());
+        viewHolder.description.setText(list.get(i).getDesc().length()>30?list.get(i).getDesc().substring(0,30)+"...":list.get(i).getDesc());
+        viewHolder.timestamp.setText(list.get(i).getTimestamp());
+        viewHolder.uploadedBy.setText(list.get(i).getUploadedBy());
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,13 +55,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView textView;
-        LinearLayout parentLayout;
+        TextView title,timestamp,uploadedBy,description;
+        RelativeLayout parentLayout;
 
-        public ViewHolder(View itemView){
+        private ViewHolder(View itemView){
             super(itemView);
-            textView=(TextView)itemView.findViewById(R.id.textview);
-            parentLayout=itemView.findViewById(R.id.Parent_layout);
+            title=itemView.findViewById(R.id.note_title);
+            timestamp=itemView.findViewById(R.id.note_timestamp);
+            description=itemView.findViewById(R.id.note_description);
+            uploadedBy=itemView.findViewById(R.id.uploaded_by);
+            parentLayout=itemView.findViewById(R.id.note_lay);
         }
     }
 }
