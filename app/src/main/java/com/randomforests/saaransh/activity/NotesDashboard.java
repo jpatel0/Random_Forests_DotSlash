@@ -12,6 +12,9 @@ import android.view.ActionMode;
 import android.view.MenuItem;
 
 import com.randomforests.saaransh.R;
+import com.randomforests.saaransh.fragments.AudioFragment;
+import com.randomforests.saaransh.fragments.RawFragment;
+import com.randomforests.saaransh.fragments.SuggestionFragment;
 import com.randomforests.saaransh.fragments.SummaryFragment;
 
 public class NotesDashboard extends AppCompatActivity {
@@ -42,12 +45,18 @@ public class NotesDashboard extends AppCompatActivity {
                     toolbar.setTitle("Summary");
                     return true;
                 case R.id.notes_raw:
+                    fragment = new RawFragment();
+                    loadFragment(fragment);
                     toolbar.setTitle("Raw Text");
                     return true;
                 case R.id.notes_audio:
+                    fragment = new AudioFragment();
+                    loadFragment(fragment);
                     toolbar.setTitle("Audio");
                     return true;
                 case R.id.notes_suggestion:
+                    fragment = new SuggestionFragment();
+                    loadFragment(fragment);
                     toolbar.setTitle("Youtube Suggestions");
                     return true;
             }

@@ -3,16 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
-    tools:context=".fragments.SummaryFragment">
+    tools:context=".fragments.RawFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/notes_summary_text_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
-        android:text="@string/hello_blank_fragment" />
+        android:text="raw" />
 
 </FrameLayout>
-
-
