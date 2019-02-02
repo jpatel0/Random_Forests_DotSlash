@@ -38,16 +38,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(context, NotesDashboard.class);
                 context.startActivity(intent);
             }
         });
-
-
-
-
-
     }
 
     @Override
