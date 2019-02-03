@@ -18,6 +18,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.randomforests.saaransh.R;
 import com.randomforests.saaransh.models.Notes;
@@ -86,6 +87,8 @@ public class Record extends AppCompatActivity {
                     Intent intent = new Intent(Record.this, NotesDashboard.class);
                     intent.putExtra("raw_note",editText.getText().toString().trim());
                     startActivity(intent);
+                }else {
+                    Toast.makeText(Record.this,"Note:All fields are required",Toast.LENGTH_LONG).show();
                 }
             }
         });

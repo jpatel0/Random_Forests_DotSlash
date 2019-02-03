@@ -1,13 +1,23 @@
 package com.randomforests.saaransh.models;
 
 public class Notes {
-    String title,desc,uploadedBy,timestamp;
+    private String title,desc,uploadedBy,topics;
+    private long timestamp;
 
-    public Notes(String title, String desc, String uploadedBy, String timestamp) {
+    public Notes(String title, String desc, String uploadedBy, long timestamp,String topics) {
         this.title = title;
         this.desc = desc;
         this.uploadedBy = uploadedBy;
         this.timestamp = timestamp;
+        this.topics = topics;
+    }
+
+    public String getTopics() {
+        return topics;
+    }
+
+    public void setTopics(String topics) {
+        this.topics = topics;
     }
 
     public String getTitle() {
@@ -34,11 +44,11 @@ public class Notes {
         this.uploadedBy = uploadedBy;
     }
 
-    public String getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
 }

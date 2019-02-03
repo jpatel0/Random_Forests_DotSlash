@@ -5,19 +5,27 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.randomforests.saaransh.R;
+import com.randomforests.saaransh.models.Notes;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.NotActiveException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,6 +38,7 @@ public class SummaryFragment extends Fragment {
 
     private String summary;
     TextView noteTextView;
+    EditText titleEdit,topicsEdit;
     public SummaryFragment() {
         // Required empty public constructor
     }
@@ -59,6 +68,21 @@ public class SummaryFragment extends Fragment {
             noteTextView = view.findViewById(R.id.notes_summary_text_view);
             noteTextView.setText(summary);
         }
+        titleEdit = view.findViewById(R.id.notes_summary_title);
+        topicsEdit = view.findViewById(R.id.notes_summary_topics);
+        FloatingActionButton fb = view.findViewById(R.id.notes_summary_save_fb);
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (noteTextView.length()>0 && titleEdit.getText().length()>0 && topicsEdit.getText().length()>0){
+                    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    userRef.child("notes").push().setValue(new Notes(titleEdit.getText().toString(),noteTextView.getText().toString(),FirebaseAuth.getInstance().getCurrentUser().getUid(),System.currentTimeMillis(),topicsEdit.getText().toString()));
+
+                }else {
+                    Toast.makeText(getContext(),"Note:All fields are required",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
 

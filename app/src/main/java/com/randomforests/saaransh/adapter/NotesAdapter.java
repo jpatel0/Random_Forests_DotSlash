@@ -37,7 +37,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.title.setText(list.get(i).getTitle());
         viewHolder.description.setText(list.get(i).getDesc().length()>30?list.get(i).getDesc().substring(0,30)+"...":list.get(i).getDesc());
-        viewHolder.timestamp.setText(list.get(i).getTimestamp());
+        viewHolder.timestamp.setText(String.valueOf(list.get(i).getTimestamp()));
         viewHolder.uploadedBy.setText(list.get(i).getUploadedBy());
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override

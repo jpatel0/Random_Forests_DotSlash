@@ -21,7 +21,7 @@ public class AllNotesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_notes);
         notesList = new ArrayList<>();
-        notesList.add(new Notes("Web","The World Wide Web, also known as the WWW and the Web, is an information space where documents and other web resources are identified by Uniform Resource Locators (URLs), interlinked by hypertext links, and accessible via the Internet.[1] English scientist Tim Berners-Lee invented the World Wide Web in 1989. ","jayze","today"));
+        notesList.add(new Notes("Web","The World Wide Web, also known as the WWW and the Web, is an information space where documents and other web resources are identified by Uniform Resource Locators (URLs), interlinked by hypertext links, and accessible via the Internet.[1] English scientist Tim Berners-Lee invented the World Wide Web in 1989. ","jayze",1500000,""));
         notesAdapter = new NotesAdapter(this,notesList);
         RecyclerView recyclerView = findViewById(R.id.all_notes_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

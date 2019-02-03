@@ -9,14 +9,12 @@ import android.view.ViewGroup;
 
 import com.randomforests.saaransh.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SuggestionFragment extends Fragment {
 
 
     public SuggestionFragment() {
         // Required empty public constructor
+
     }
 
 
