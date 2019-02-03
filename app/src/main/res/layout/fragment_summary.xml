@@ -42,7 +42,7 @@
             android:clickable="true"
             app:fabSize="normal"
             android:layout_gravity="bottom|end"
-            android:layout_margin="35dp"
+            android:layout_margin="50dp"
             android:src="@drawable/ic_save" />
     </FrameLayout>
 

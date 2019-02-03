@@ -4,6 +4,8 @@ public class Notes {
     private String title,desc,uploadedBy,topics;
     private long timestamp;
 
+    public Notes(){}
+
     public Notes(String title, String desc, String uploadedBy, long timestamp,String topics) {
         this.title = title;
         this.desc = desc;

@@ -11,6 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.randomforests.saaransh.R;
 import com.randomforests.saaransh.activity.NotesDashboard;
 import com.randomforests.saaransh.models.Notes;
@@ -19,8 +25,8 @@ import java.util.ArrayList;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> {
 
-    ArrayList<Notes> list ;
-    Context context;
+    private ArrayList<Notes> list ;
+    private Context context;
     public NotesAdapter(Context context, ArrayList<Notes> list) {
         this.list=list;
         this.context=context;
@@ -34,11 +40,20 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         viewHolder.title.setText(list.get(i).getTitle());
         viewHolder.description.setText(list.get(i).getDesc().length()>30?list.get(i).getDesc().substring(0,30)+"...":list.get(i).getDesc());
         viewHolder.timestamp.setText(String.valueOf(list.get(i).getTimestamp()));
-        viewHolder.uploadedBy.setText(list.get(i).getUploadedBy());
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Users").child(list.get(i).getUploadedBy());
+        ref.child("name").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                viewHolder.uploadedBy.setText(dataSnapshot.getValue().toString());
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
