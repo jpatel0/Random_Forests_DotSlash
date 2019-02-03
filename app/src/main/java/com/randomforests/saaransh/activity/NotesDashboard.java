@@ -30,7 +30,8 @@ public class NotesDashboard extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.notes_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        loadFragment(new SummaryFragment());
+        navigation.setSelectedItemId(R.id.notes_summary);
+//        loadFragment(new SummaryFragment());
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -70,5 +71,10 @@ public class NotesDashboard extends AppCompatActivity {
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

@@ -43,8 +43,10 @@ public class Login extends AppCompatActivity {
                             .setIsSmartLockEnabled(true)
                             .build(),
                     RC_SIGN_IN);
-        }else
-            startActivity(new Intent(Login.this,MainActivity.class));
+        }else {
+            startActivity(new Intent(Login.this, MainActivity.class));
+            finish();
+        }
     }
 
     @Override
